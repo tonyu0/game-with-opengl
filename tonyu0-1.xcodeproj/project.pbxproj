@@ -7,7 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C03CABC32245A01900CC92FF /* VertexArray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C03CABC12245A01900CC92FF /* VertexArray.cpp */; };
 		C069B35B2240A85D00DB509F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C069B35A2240A85D00DB509F /* main.cpp */; };
+		C069B3642240A88700DB509F /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C069B3622240A88700DB509F /* Game.cpp */; };
+		C069B3672240AFE700DB509F /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C069B3662240AFE700DB509F /* SDL2.framework */; };
+		C069B3682240B94B00DB509F /* Game.hpp in Sources */ = {isa = PBXBuildFile; fileRef = C069B3632240A88700DB509F /* Game.hpp */; };
+		C069B36F22413B6800DB509F /* Actor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C069B36D22413B6800DB509F /* Actor.cpp */; };
+		C069B3722241403C00DB509F /* Component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C069B3702241403C00DB509F /* Component.cpp */; };
+		C069B374224148DD00DB509F /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C069B373224148DD00DB509F /* SDL2_image.framework */; };
+		C069B3772241E2DF00DB509F /* SpriteComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C069B3752241E2DF00DB509F /* SpriteComponent.cpp */; };
+		C069B37A2243168000DB509F /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C069B3782243168000DB509F /* Player.cpp */; };
+		C069B37D2243234600DB509F /* Math.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C069B37B2243234600DB509F /* Math.cpp */; };
+		C069B380224332E500DB509F /* BGSpriteComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C069B37E224332E500DB509F /* BGSpriteComponent.cpp */; };
+		C069B383224337BF00DB509F /* AnimSpriteComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C069B381224337BF00DB509F /* AnimSpriteComponent.cpp */; };
+		C07B169922448CEE00818451 /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C07B169722448CEE00818451 /* Enemy.cpp */; };
+		C07B169C22448E4F00818451 /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C07B169A22448E4F00818451 /* Random.cpp */; };
+		C07B169F224496F600818451 /* MoveComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C07B169D224496F600818451 /* MoveComponent.cpp */; };
+		C07B16A22244979000818451 /* InputComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C07B16A02244979000818451 /* InputComponent.cpp */; };
+		C07B16A52245236300818451 /* CircleComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C07B16A32245236300818451 /* CircleComponent.cpp */; };
+		C07B16A8224529ED00818451 /* Bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C07B16A6224529ED00818451 /* Bullet.cpp */; };
+		C07B16AA22453E7A00818451 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C07B16A922453E7A00818451 /* OpenGL.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +42,43 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C03CABC12245A01900CC92FF /* VertexArray.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = VertexArray.cpp; sourceTree = "<group>"; };
+		C03CABC22245A01900CC92FF /* VertexArray.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = VertexArray.hpp; sourceTree = "<group>"; };
 		C069B3572240A85D00DB509F /* tonyu0-1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "tonyu0-1"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C069B35A2240A85D00DB509F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		C069B3622240A88700DB509F /* Game.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
+		C069B3632240A88700DB509F /* Game.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Game.hpp; sourceTree = "<group>"; };
+		C069B3662240AFE700DB509F /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
+		C069B3692240BB4900DB509F /* SDL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL.framework; path = ../../../../../Library/Frameworks/SDL.framework; sourceTree = "<group>"; };
+		C069B36B2240C0DA00DB509F /* libSDL2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDL2.a; path = ../../../../../usr/local/lib/libSDL2.a; sourceTree = "<group>"; };
+		C069B36D22413B6800DB509F /* Actor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Actor.cpp; sourceTree = "<group>"; };
+		C069B36E22413B6800DB509F /* Actor.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Actor.hpp; sourceTree = "<group>"; };
+		C069B3702241403C00DB509F /* Component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Component.cpp; sourceTree = "<group>"; };
+		C069B3712241403C00DB509F /* Component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Component.hpp; sourceTree = "<group>"; };
+		C069B373224148DD00DB509F /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../../../../../Library/Frameworks/SDL2_image.framework; sourceTree = "<group>"; };
+		C069B3752241E2DF00DB509F /* SpriteComponent.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SpriteComponent.cpp; sourceTree = "<group>"; };
+		C069B3762241E2DF00DB509F /* SpriteComponent.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SpriteComponent.hpp; sourceTree = "<group>"; };
+		C069B3782243168000DB509F /* Player.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
+		C069B3792243168000DB509F /* Player.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Player.hpp; sourceTree = "<group>"; };
+		C069B37B2243234600DB509F /* Math.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Math.cpp; sourceTree = "<group>"; };
+		C069B37C2243234600DB509F /* Math.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Math.hpp; sourceTree = "<group>"; };
+		C069B37E224332E500DB509F /* BGSpriteComponent.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BGSpriteComponent.cpp; sourceTree = "<group>"; };
+		C069B37F224332E500DB509F /* BGSpriteComponent.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BGSpriteComponent.hpp; sourceTree = "<group>"; };
+		C069B381224337BF00DB509F /* AnimSpriteComponent.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AnimSpriteComponent.cpp; sourceTree = "<group>"; };
+		C069B382224337BF00DB509F /* AnimSpriteComponent.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AnimSpriteComponent.hpp; sourceTree = "<group>"; };
+		C07B169722448CEE00818451 /* Enemy.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Enemy.cpp; sourceTree = "<group>"; };
+		C07B169822448CEE00818451 /* Enemy.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Enemy.hpp; sourceTree = "<group>"; };
+		C07B169A22448E4F00818451 /* Random.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Random.cpp; sourceTree = "<group>"; };
+		C07B169B22448E4F00818451 /* Random.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Random.hpp; sourceTree = "<group>"; };
+		C07B169D224496F600818451 /* MoveComponent.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MoveComponent.cpp; sourceTree = "<group>"; };
+		C07B169E224496F600818451 /* MoveComponent.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MoveComponent.hpp; sourceTree = "<group>"; };
+		C07B16A02244979000818451 /* InputComponent.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = InputComponent.cpp; sourceTree = "<group>"; };
+		C07B16A12244979000818451 /* InputComponent.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = InputComponent.hpp; sourceTree = "<group>"; };
+		C07B16A32245236300818451 /* CircleComponent.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CircleComponent.cpp; sourceTree = "<group>"; };
+		C07B16A42245236300818451 /* CircleComponent.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CircleComponent.hpp; sourceTree = "<group>"; };
+		C07B16A6224529ED00818451 /* Bullet.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Bullet.cpp; sourceTree = "<group>"; };
+		C07B16A7224529ED00818451 /* Bullet.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Bullet.hpp; sourceTree = "<group>"; };
+		C07B16A922453E7A00818451 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +86,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C07B16AA22453E7A00818451 /* OpenGL.framework in Frameworks */,
+				C069B374224148DD00DB509F /* SDL2_image.framework in Frameworks */,
+				C069B3672240AFE700DB509F /* SDL2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +100,7 @@
 			children = (
 				C069B3592240A85D00DB509F /* tonyu0-1 */,
 				C069B3582240A85D00DB509F /* Products */,
+				C069B3652240AFE700DB509F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,8 +116,50 @@
 			isa = PBXGroup;
 			children = (
 				C069B35A2240A85D00DB509F /* main.cpp */,
+				C069B381224337BF00DB509F /* AnimSpriteComponent.cpp */,
+				C069B382224337BF00DB509F /* AnimSpriteComponent.hpp */,
+				C069B37E224332E500DB509F /* BGSpriteComponent.cpp */,
+				C069B37F224332E500DB509F /* BGSpriteComponent.hpp */,
+				C07B16A32245236300818451 /* CircleComponent.cpp */,
+				C07B16A42245236300818451 /* CircleComponent.hpp */,
+				C07B16A02244979000818451 /* InputComponent.cpp */,
+				C07B16A12244979000818451 /* InputComponent.hpp */,
+				C07B169D224496F600818451 /* MoveComponent.cpp */,
+				C07B169E224496F600818451 /* MoveComponent.hpp */,
+				C069B3622240A88700DB509F /* Game.cpp */,
+				C069B3632240A88700DB509F /* Game.hpp */,
+				C07B16A6224529ED00818451 /* Bullet.cpp */,
+				C07B16A7224529ED00818451 /* Bullet.hpp */,
+				C069B36D22413B6800DB509F /* Actor.cpp */,
+				C069B36E22413B6800DB509F /* Actor.hpp */,
+				C069B3702241403C00DB509F /* Component.cpp */,
+				C069B3712241403C00DB509F /* Component.hpp */,
+				C069B3752241E2DF00DB509F /* SpriteComponent.cpp */,
+				C069B3762241E2DF00DB509F /* SpriteComponent.hpp */,
+				C069B3782243168000DB509F /* Player.cpp */,
+				C069B3792243168000DB509F /* Player.hpp */,
+				C07B169722448CEE00818451 /* Enemy.cpp */,
+				C07B169822448CEE00818451 /* Enemy.hpp */,
+				C03CABC12245A01900CC92FF /* VertexArray.cpp */,
+				C03CABC22245A01900CC92FF /* VertexArray.hpp */,
+				C069B37B2243234600DB509F /* Math.cpp */,
+				C069B37C2243234600DB509F /* Math.hpp */,
+				C07B169A22448E4F00818451 /* Random.cpp */,
+				C07B169B22448E4F00818451 /* Random.hpp */,
 			);
 			path = "tonyu0-1";
+			sourceTree = "<group>";
+		};
+		C069B3652240AFE700DB509F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C07B16A922453E7A00818451 /* OpenGL.framework */,
+				C069B373224148DD00DB509F /* SDL2_image.framework */,
+				C069B36B2240C0DA00DB509F /* libSDL2.a */,
+				C069B3692240BB4900DB509F /* SDL.framework */,
+				C069B3662240AFE700DB509F /* SDL2.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,7 +218,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C07B16A22244979000818451 /* InputComponent.cpp in Sources */,
+				C07B169C22448E4F00818451 /* Random.cpp in Sources */,
+				C07B16A52245236300818451 /* CircleComponent.cpp in Sources */,
+				C07B16A8224529ED00818451 /* Bullet.cpp in Sources */,
+				C069B3682240B94B00DB509F /* Game.hpp in Sources */,
+				C069B37A2243168000DB509F /* Player.cpp in Sources */,
+				C07B169F224496F600818451 /* MoveComponent.cpp in Sources */,
 				C069B35B2240A85D00DB509F /* main.cpp in Sources */,
+				C069B37D2243234600DB509F /* Math.cpp in Sources */,
+				C069B3772241E2DF00DB509F /* SpriteComponent.cpp in Sources */,
+				C069B3642240A88700DB509F /* Game.cpp in Sources */,
+				C03CABC32245A01900CC92FF /* VertexArray.cpp in Sources */,
+				C069B36F22413B6800DB509F /* Actor.cpp in Sources */,
+				C069B3722241403C00DB509F /* Component.cpp in Sources */,
+				C069B380224332E500DB509F /* BGSpriteComponent.cpp in Sources */,
+				C07B169922448CEE00818451 /* Enemy.cpp in Sources */,
+				C069B383224337BF00DB509F /* AnimSpriteComponent.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +357,12 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6T6N76446H;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -250,6 +372,12 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6T6N76446H;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
