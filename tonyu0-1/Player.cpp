@@ -7,51 +7,50 @@
 //
 
 #include "Player.hpp"
-#include "AnimSpriteComponent.hpp"
+#include "SpriteComponent.hpp"
+#include "InputComponent.hpp"
 #include "Bullet.hpp"
 
-Player::Player(Game* game):Actor(game), mXSpeed(0.0f), mYSpeed(0.0f) {
-    AnimSpriteComponent* asc = new AnimSpriteComponent(this); // Playerに紐付くSpriteComponent
-    std::vector<SDL_Texture*> anims = {
-        game->LoadTexture("Character01.png"),
-        game->LoadTexture("Character02.png"),
-        game->LoadTexture("Character03.png"),
-        game->LoadTexture("Character04.png"),
-        game->LoadTexture("Character05.png"),
-        game->LoadTexture("Character06.png"),
-    };
-    asc->SetAnimTextures(anims);
+Player::Player(Game* game):Actor(game), mCircle(nullptr) {
+//    AnimSpriteComponent* asc = new AnimSpriteComponent(this); // Playerに紐付くSpriteComponent
+//    std::vector<SDL_Texture*> anims = {
+//        game->LoadTexture("Character01.png"),
+//        game->LoadTexture("Character02.png"),
+//        game->LoadTexture("Character03.png"),
+//        game->LoadTexture("Character04.png"),
+//        game->LoadTexture("Character05.png"),
+//        game->LoadTexture("Character06.png"),
+//    };
+//    asc->SetAnimTextures(anims);
+    // SpriteComponentにテクスチャをセット
+//    SpriteComponent* sc = new SpriteComponent(this, 150);
+//    sc->SetTexture(game->LoadTexture("Assets/Ship.png"));
+    
+    // InputComponent
+    InputComponent* ic = new InputComponent(this);
+    ic->SetForwardSpeed(60.0f);
+    ic->SetAngularSpeed(10.f);
+    
 }
 
 void Player::UpdateActor(float deltaTime){
     Actor::UpdateActor(deltaTime);
-    Vector2 pos = GetPosition();
-    pos.x += mXSpeed * deltaTime;
-    pos.y += mYSpeed * deltaTime;
+        
+    // ビュー行列はあカメラの位置、向いてる方向、上方向から作れる。
+    Vector3 cameraPos = GetPosition();
+    Vector3 target = GetPosition() + GetForward() * 100.0f;
+    Vector3 up = Vector3::UnitZ;
     
-    SetPosition(pos);
+    // ビュー行列　カメラの目の位置と、向いている方向
+    Matrix4 view = Matrix4::CreateLookAt(cameraPos, target, up);
+    GetGame()->SetViewMatrix(view);
 }
 
-void Player::ProcessKeyboard(const uint8_t *state){
-    mXSpeed = 0.0f;
-    mYSpeed = 0.0f;
-    if(state[SDL_SCANCODE_UP]){
-        mYSpeed -= 200;
-    }
-    if(state[SDL_SCANCODE_DOWN]){
-        mYSpeed += 200;
-    }
-    if(state[SDL_SCANCODE_LEFT]){
-        mXSpeed -= 300;
-    }
-    if(state[SDL_SCANCODE_RIGHT]){
-        mXSpeed += 300;
-    }
-    
-    if(state[SDL_SCANCODE_SPACE]){
-        Bullet* bl = new Bullet(GetGame());
-        bl->SetPosition(GetPosition());
-        bl->SetRotation(GetRotation());
-        
-    }
+// Player独自の動き（射出）をここでオーバーライド。
+void Player::ActorInput(const uint8_t *state){
+//    if(state[SDL_SCANCODE_SPACE]){
+//        Bullet* bl = new Bullet(GetGame());
+//        bl->SetPosition(GetPosition());
+//        bl->SetRotation(GetRotation());
+//    }
 }

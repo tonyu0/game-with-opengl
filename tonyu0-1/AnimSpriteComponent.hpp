@@ -5,7 +5,7 @@
 //  Created by Nakagawa on 2019/03/21.
 //  Copyright © 2019 Nakagawa. All rights reserved.
 //
-
+#pragma once
 #ifndef AnimSpriteComponent_hpp
 #define AnimSpriteComponent_hpp
 

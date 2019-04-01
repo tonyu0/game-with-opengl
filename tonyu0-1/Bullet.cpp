@@ -15,7 +15,7 @@
 
 Bullet::Bullet(class Game* game) : Actor(game), mDeathTimer(1.0f) {
     SpriteComponent* sc = new SpriteComponent(this);
-    sc->SetTexture(mGame->LoadTexture("Laser.png"));
+    sc->SetTexture(game->LoadTexture("Assets/Laser.png"));
     MoveComponent* mc = new MoveComponent(this);
     mc->SetForwardSpeed(150.0f);
     mCircle = new CircleComponent(this);
@@ -27,11 +27,11 @@ void Bullet::UpdateActor(float deltaTime){
     if(mDeathTimer <= 0.0f){
         SetState(EDead);
     }
-    for (auto enemy : GetGame()->GetEnemies()){
-        if(Intersect(*mCircle, *(enemy->GetCircle()))){
-            SetState(EDead);
-            enemy->SetState(EDead);
-            break;
-        }
-    }
+//    for (auto enemy : GetGame()->GetEnemies()){
+//        if(Intersect(*mCircle, *(enemy->GetCircle()))){
+//            SetState(EDead);
+//            enemy->SetState(EDead);
+//            break;
+//        }
+//    }
 }

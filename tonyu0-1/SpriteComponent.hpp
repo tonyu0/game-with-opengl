@@ -8,20 +8,18 @@
 
 #pragma once
 
-#ifndef SpriteComponent_hpp
-#define SpriteComponent_hpp
 
 #include "Component.hpp"
-#include "SDL2/SDL.h"
+#include <SDL/SDL.h>
 
-#endif /* SpriteComponent_hpp */
+/* SpriteComponent_hpp */
 
 class SpriteComponent : public Component {
 public:
     SpriteComponent(class Actor* owner, int drawOrder = 100);
     ~SpriteComponent();
     
-    virtual void Draw(SDL_Renderer* renderer);
+    virtual void Draw(class Shader* shader);
     
     // Getter
     int GetDrawOrder() const {return mDrawOrder;}
@@ -29,10 +27,10 @@ public:
     int GetHeight() const {return mTexHeight;}
     
     // Setter
-    void SetTexture(SDL_Texture* texture); // mTextureにtextureをset
+    void SetTexture(class Texture* texture); // mTextureにtextureをset
     
 protected:
-    SDL_Texture* mTexture;
+    class Texture* mTexture;
     int mDrawOrder;
     int mTexWidth;
     int mTexHeight;

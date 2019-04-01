@@ -5,7 +5,7 @@
 //  Created by Nakagawa on 2019/03/21.
 //  Copyright © 2019 Nakagawa. All rights reserved.
 //
-
+#pragma once
 #ifndef BGSpriteComponent_hpp
 #define BGSpriteComponent_hpp
 
@@ -19,7 +19,7 @@ class BGSpriteComponent : public SpriteComponent {
 public:
     BGSpriteComponent(class Actor* owner, int drawOrder = 10);
     void Update(float deltaTime) override;
-    void Draw(SDL_Renderer* renderer) override;
+    void Draw(SDL_Renderer* renderer);
     
     // Setter
     void SetBGTextures(const std::vector<SDL_Texture*>& textures);

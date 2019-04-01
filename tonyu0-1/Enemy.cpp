@@ -11,15 +11,17 @@
 #include "SpriteComponent.hpp"
 #include "MoveComponent.hpp"
 #include "CircleComponent.hpp"
+#include "Math.hpp"
 
 Enemy::Enemy(Game* game) : Actor(game) {
-    Vector2 randPos = Random::GetVector(Vector2::Zero, Vector2(1024.0f,768.0f));
+    Vector3 randPos = Random::GetVector(Vector3(-512.0f, -384.0f,0.f),
+                                        Vector3(512.0f, 384.0f,0.f));
     SetPosition(randPos);
     
-    SetRotation(Random::GetFloatRange(0, Math::TwoPi));
+    SetRotation(Quaternion(Vector3::UnitX,Random::GetFloatRange(0.0f, Math::TwoPi)));
     
     SpriteComponent* sc = new SpriteComponent(this);
-    sc->SetTexture(game->LoadTexture("s_kao.png"));
+    sc->SetTexture(game->LoadTexture("Assets/s_kao.png"));
     
     MoveComponent* mc = new MoveComponent(this);
     mc->SetForwardSpeed(150.0f);

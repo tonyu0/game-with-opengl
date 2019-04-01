@@ -5,11 +5,10 @@
 //  Created by Nakagawa on 2019/03/19.
 //  Copyright © 2019 Nakagawa. All rights reserved.
 //
+#pragma once
 
 #ifndef Actor_hpp
 #define Actor_hpp
-
-#pragma once
 #include <stdio.h>
 #include <vector>
 #include "Game.hpp"
@@ -33,8 +32,8 @@ public:
     virtual void UpdateActor(float deltaTime); //
     
     // Input処理 キーの処理を受け取り、動かす。
-    void ProcessInput(const int* Keystate);
-    virtual void ActorInput(const int* Keystate);
+    void ProcessKeyboard(const Uint8* Keystate);
+    virtual void ActorInput(const Uint8* Keystate);
     
     // Component management
     void AddComponent(class Component*);
@@ -43,23 +42,39 @@ public:
     // Getter
     State GetState() const {return mState;}
     Game* GetGame() const {return mGame;}
-    const Vector2& GetPosition() const {return mPosition;}
+    const Vector3& GetPosition() const {return mPosition;}
     float GetScale() const {return mScale;}
-    float GetRotation() const {return mRotation;}
-    Vector2 GetForward() const {return Vector2(Math::Cos(mRotation),-Math::Sin(mRotation));} // 向いてる向きを返す。
+    Quaternion GetRotation() const {return mRotation;}
+    // 2DでのGetForward() : 平面上でcos and sinを使う。
+//    Vector2 GetForward() const {return Vector2(Math::Cos(mRotation),-Math::Sin(mRotation));} // 向いてる向きを返す。
+    // 3DでのGetForward() : 元の前方ベクトルにQuaternionを使う。
+    Vector3 GetForward() const {return Vector3::Transform(Vector3::UnitX, mRotation);}
+    Matrix4 GetWorldTransform() const {return mWorldTransform;}
     
-    // Setter
+    // Setter 新しい値がセットされたら、ワールド行列を再計算
     void SetState(State state) {mState = state;}
-    void SetPosition(Vector2 pos) {mPosition = pos;}
-    void SetScale(float scale) {mScale = scale;}
-    void SetRotation(float rot) {mRotation = rot;}
+    void SetPosition(Vector3 pos) {mPosition = pos; mRecomputeWorldTransform = true;}
+    void SetScale(float scale) {mScale = scale; mRecomputeWorldTransform = true;}
+    void SetRotation(Quaternion rot) {mRotation = rot; mRecomputeWorldTransform = true;}
+    
+    // OpenGL
+    void ComputeWorldTransform(); // 呼ばれた時に、ワールド行列を更新。
     
 protected:
     // Actorは以下の状態を保つ。
     State mState;
-    Vector2 mPosition;
+    Vector3 mPosition;
     float mScale;
-    float mRotation;
+    Quaternion mRotation; // 回転はQuaternionを使う。
+    
+    // OpenGL
+    // それぞれのActorがもつワールド空間中心からの拡大・回転・移動を合わせた行列
+    // スプライトごとにオブジェクト空間を用意してロード、それをワールド空間上で移動することによりメモリの節約。
+    // (例えば10個の物体に10個の頂点バッファでは非効率)
+    // この行列は頂点シェーダに渡して頂点位置の計算。
+    Matrix4 mWorldTransform;
+    // UpdateActorなどで、ワールド行列の再計算が必要か？(更新された時のみ行列を再計算)
+    bool mRecomputeWorldTransform;
     
     // Components and parent Game
     std::vector<class Component*> mComponents;

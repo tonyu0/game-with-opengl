@@ -13,18 +13,18 @@ AnimSpriteComponent::AnimSpriteComponent(Actor* owner, int drawOrder) : SpriteCo
 }
 
 void AnimSpriteComponent::Update(float deltaTime){
-    SpriteComponent::Update(deltaTime);
-    mCurFrame += mAnimFPS * deltaTime;
-    if(mCurFrame >= mAnimTextures.size()){
-        mCurFrame -= mAnimTextures.size();
-    }
-    SetTexture(mAnimTextures[static_cast<int>(mCurFrame)]);
+//    SpriteComponent::Update(deltaTime);
+//    mCurFrame += mAnimFPS * deltaTime;
+//    if(mCurFrame >= mAnimTextures.size()){
+//        mCurFrame -= mAnimTextures.size();
+//    }
+//    SetTexture(mAnimTextures[static_cast<int>(mCurFrame)]);
 }
 
 void AnimSpriteComponent::SetAnimTextures(const std::vector<SDL_Texture*>& anims){
-    mAnimTextures = anims;
-    if(mAnimTextures.size()>0){
-        mCurFrame = 0.0f;
-        SetTexture(mAnimTextures[0]);
-    }
+//    mAnimTextures = anims;
+//    if(mAnimTextures.size()>0){
+//        mCurFrame = 0.0f;
+//        SetTexture(mAnimTextures[0]);
+//    }
 }

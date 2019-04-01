@@ -10,7 +10,7 @@
 #include "Actor.hpp"
 #include "Component.hpp"
 
-Actor::Actor(Game* game) : mGame(game),mPosition(Vector2(0.0f,0.0f)),mScale(1.0f),mRotation(0.0f), mState(EActive) {
+Actor::Actor(Game* game) : mGame(game),mPosition(Vector3::Zero),mScale(1.0f),mRotation(Quaternion::Identity), mState(EActive), mRecomputeWorldTransform(true) {
     mGame->AddActor(this);
 }
 
@@ -23,6 +23,7 @@ Actor::~Actor(){
 
 void Actor::Update(float deltaTime){
     if(mState==EActive){
+        ComputeWorldTransform();
         UpdateComponents(deltaTime);
         UpdateActor(deltaTime);
     }
@@ -58,14 +59,27 @@ void Actor::RemoveComponent(Component* comp){
 // ActorとComponent、それぞれに異なる動きを実装する為、Actorに上位クラスのProcessInputを実装。これで一括Input受付ガできるようにする。
 // Component::ProcessInputはoverride可能。コンポーネントごとのInput受付。
 // Actor::ActorInputはoverride可能。ActorごとのInput受付。
-void Actor::ProcessInput(const int *Keystate){
+void Actor::ProcessKeyboard(const Uint8 *Keystate){
     for(auto comp : mComponents){
-        comp->ProcessInput(Keystate);
+        comp->ProcessKeyboard(Keystate);
     }
     ActorInput(Keystate);
 }
 
 //仮想関数。ここでは書かない。
-void Actor::ActorInput(const int *Keystate){
+void Actor::ActorInput(const Uint8 *Keystate){
     
+}
+
+void Actor::ComputeWorldTransform(){
+    if(mRecomputeWorldTransform){
+        mRecomputeWorldTransform = false;
+        mWorldTransform = Matrix4::CreateScale(mScale);
+        mWorldTransform *= Matrix4::CreateFromQuaternion(mRotation);
+        mWorldTransform *= Matrix4::CreateTranslation(mPosition);
+        
+        for(auto comp : mComponents){
+            comp->OnUpdateWorldTransform();
+        }
+    }
 }

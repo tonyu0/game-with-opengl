@@ -7,6 +7,7 @@
 //
 
 #pragma once
+#include <cstdint>
 
 class Component {
 public:
@@ -16,10 +17,14 @@ public:
     
     // Input処理 Component独自のProcessInput
     // 子クラスでoverride予定
-    virtual void ProcessInput(const int* Keystate){};
+    virtual void ProcessKeyboard(const uint8_t* Keystate){};
     
     // Getter
     int GetUpdateOrder() const {return mUpdateOrder;}
+    
+    // OpenGL
+    // 親のActorのワールド行列が更新されたら、Componentに通知 (今は仮想関数)
+    virtual void OnUpdateWorldTransform(){}
     
 protected:
     class Actor* mOwner;

@@ -8,13 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		C03CABC32245A01900CC92FF /* VertexArray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C03CABC12245A01900CC92FF /* VertexArray.cpp */; };
+		C03CDDCF224DA0D4005D9DE5 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C03CDDCE224DA0D4005D9DE5 /* CoreFoundation.framework */; };
+		C03CDDD6224DF3B1005D9DE5 /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C03CDDD4224DF3B1005D9DE5 /* Mesh.cpp */; };
+		C03CDDD9224DFBE1005D9DE5 /* MeshComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C03CDDD7224DFBE1005D9DE5 /* MeshComponent.cpp */; };
+		C053E0042251D8FE00DFF32E /* AudioSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C053E0022251D8FE00DFF32E /* AudioSystem.cpp */; };
+		C053E0072251EBA900DFF32E /* SoundEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C053E0052251EBA900DFF32E /* SoundEvent.cpp */; };
+		C053E00A2252105A00DFF32E /* AudioComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C053E0082252105A00DFF32E /* AudioComponent.cpp */; };
+		C05DF41522486C93003FD0F5 /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C05DF41322486C93003FD0F5 /* Shader.cpp */; };
+		C05DF4182249115C003FD0F5 /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C05DF4162249115C003FD0F5 /* Texture.cpp */; };
 		C069B35B2240A85D00DB509F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C069B35A2240A85D00DB509F /* main.cpp */; };
 		C069B3642240A88700DB509F /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C069B3622240A88700DB509F /* Game.cpp */; };
-		C069B3672240AFE700DB509F /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C069B3662240AFE700DB509F /* SDL2.framework */; };
 		C069B3682240B94B00DB509F /* Game.hpp in Sources */ = {isa = PBXBuildFile; fileRef = C069B3632240A88700DB509F /* Game.hpp */; };
 		C069B36F22413B6800DB509F /* Actor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C069B36D22413B6800DB509F /* Actor.cpp */; };
 		C069B3722241403C00DB509F /* Component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C069B3702241403C00DB509F /* Component.cpp */; };
-		C069B374224148DD00DB509F /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C069B373224148DD00DB509F /* SDL2_image.framework */; };
 		C069B3772241E2DF00DB509F /* SpriteComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C069B3752241E2DF00DB509F /* SpriteComponent.cpp */; };
 		C069B37A2243168000DB509F /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C069B3782243168000DB509F /* Player.cpp */; };
 		C069B37D2243234600DB509F /* Math.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C069B37B2243234600DB509F /* Math.cpp */; };
@@ -44,6 +50,48 @@
 /* Begin PBXFileReference section */
 		C03CABC12245A01900CC92FF /* VertexArray.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = VertexArray.cpp; sourceTree = "<group>"; };
 		C03CABC22245A01900CC92FF /* VertexArray.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = VertexArray.hpp; sourceTree = "<group>"; };
+		C03CDDCE224DA0D4005D9DE5 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		C03CDDD4224DF3B1005D9DE5 /* Mesh.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Mesh.cpp; sourceTree = "<group>"; };
+		C03CDDD5224DF3B1005D9DE5 /* Mesh.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Mesh.hpp; sourceTree = "<group>"; };
+		C03CDDD7224DFBE1005D9DE5 /* MeshComponent.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MeshComponent.cpp; sourceTree = "<group>"; };
+		C03CDDD8224DFBE1005D9DE5 /* MeshComponent.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MeshComponent.hpp; sourceTree = "<group>"; };
+		C053DFE9224F02F900DFF32E /* ShipWithThrust.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ShipWithThrust.png; sourceTree = "<group>"; };
+		C053DFEA224F02F900DFF32E /* Farback01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Farback01.png; sourceTree = "<group>"; };
+		C053DFEB224F02F900DFF32E /* Farback02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Farback02.png; sourceTree = "<group>"; };
+		C053DFEC224F02F900DFF32E /* Sphere.gpmesh */ = {isa = PBXFileReference; lastKnownFileType = text; path = Sphere.gpmesh; sourceTree = "<group>"; };
+		C053DFED224F02F900DFF32E /* Ship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ship.png; sourceTree = "<group>"; };
+		C053DFEE224F02F900DFF32E /* s_kao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s_kao.png; sourceTree = "<group>"; };
+		C053DFEF224F02F900DFF32E /* Character04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Character04.png; sourceTree = "<group>"; };
+		C053DFF0224F02F900DFF32E /* Character05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Character05.png; sourceTree = "<group>"; };
+		C053DFF1224F02F900DFF32E /* Laser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Laser.png; sourceTree = "<group>"; };
+		C053DFF2224F02F900DFF32E /* Character06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Character06.png; sourceTree = "<group>"; };
+		C053DFF3224F02F900DFF32E /* Character02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Character02.png; sourceTree = "<group>"; };
+		C053DFF4224F02F900DFF32E /* Character03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Character03.png; sourceTree = "<group>"; };
+		C053DFF5224F02F900DFF32E /* Character01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Character01.png; sourceTree = "<group>"; };
+		C053DFF6224F02F900DFF32E /* Plane.gpmesh */ = {isa = PBXFileReference; lastKnownFileType = text; path = Plane.gpmesh; sourceTree = "<group>"; };
+		C053DFF7224F02F900DFF32E /* kao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kao.png; sourceTree = "<group>"; };
+		C053DFF8224F02F900DFF32E /* Stars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Stars.png; sourceTree = "<group>"; };
+		C053DFF9224F02F900DFF32E /* Cube.gpmesh */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cube.gpmesh; sourceTree = "<group>"; };
+		C053DFFC224F0B4000DFF32E /* Sprite.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Sprite.frag; sourceTree = "<group>"; };
+		C053DFFD224F0B4000DFF32E /* Sprite.vert */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Sprite.vert; sourceTree = "<group>"; };
+		C053DFFE224F19A400DFF32E /* Phong.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Phong.frag; sourceTree = "<group>"; };
+		C053DFFF224F19A400DFF32E /* Phong.vert */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Phong.vert; sourceTree = "<group>"; };
+		C053E000224F1B8D00DFF32E /* BasicMesh.vert */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = BasicMesh.vert; sourceTree = "<group>"; };
+		C053E001224F1B8D00DFF32E /* BasicMesh.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = BasicMesh.frag; sourceTree = "<group>"; };
+		C053E0022251D8FE00DFF32E /* AudioSystem.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AudioSystem.cpp; sourceTree = "<group>"; };
+		C053E0032251D8FE00DFF32E /* AudioSystem.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AudioSystem.hpp; sourceTree = "<group>"; };
+		C053E0052251EBA900DFF32E /* SoundEvent.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SoundEvent.cpp; sourceTree = "<group>"; };
+		C053E0062251EBA900DFF32E /* SoundEvent.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SoundEvent.hpp; sourceTree = "<group>"; };
+		C053E0082252105A00DFF32E /* AudioComponent.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AudioComponent.cpp; sourceTree = "<group>"; };
+		C053E0092252105A00DFF32E /* AudioComponent.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AudioComponent.hpp; sourceTree = "<group>"; };
+		C05DF41322486C93003FD0F5 /* Shader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
+		C05DF41422486C93003FD0F5 /* Shader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Shader.hpp; sourceTree = "<group>"; };
+		C05DF4162249115C003FD0F5 /* Texture.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
+		C05DF4172249115C003FD0F5 /* Texture.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Texture.hpp; sourceTree = "<group>"; };
+		C05DF4192249128F003FD0F5 /* libGLEW.2.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.1.0.dylib; path = ../../code/External/GLEW/lib/mac/libGLEW.2.1.0.dylib; sourceTree = "<group>"; };
+		C05DF41B22491590003FD0F5 /* libSOIL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSOIL.a; path = ../../code/External/SOIL/lib/mac/libSOIL.a; sourceTree = "<group>"; };
+		C05DF41D224915A9003FD0F5 /* SOIL.lib */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = SOIL.lib; path = ../../code/External/SOIL/lib/win/x86/SOIL.lib; sourceTree = "<group>"; };
+		C05DF42022491A5E003FD0F5 /* libSOIL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSOIL.a; path = ../../../../../usr/local/lib/libSOIL.a; sourceTree = "<group>"; };
 		C069B3572240A85D00DB509F /* tonyu0-1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "tonyu0-1"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C069B35A2240A85D00DB509F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		C069B3622240A88700DB509F /* Game.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
@@ -79,6 +127,7 @@
 		C07B16A6224529ED00818451 /* Bullet.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Bullet.cpp; sourceTree = "<group>"; };
 		C07B16A7224529ED00818451 /* Bullet.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Bullet.hpp; sourceTree = "<group>"; };
 		C07B16A922453E7A00818451 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		C09354F82249C5900098874B /* libSOIL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSOIL.a; path = SOIL/lib/mac/libSOIL.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,15 +135,51 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C03CDDCF224DA0D4005D9DE5 /* CoreFoundation.framework in Frameworks */,
 				C07B16AA22453E7A00818451 /* OpenGL.framework in Frameworks */,
-				C069B374224148DD00DB509F /* SDL2_image.framework in Frameworks */,
-				C069B3672240AFE700DB509F /* SDL2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C03CDDD1224DAA73005D9DE5 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				C053E001224F1B8D00DFF32E /* BasicMesh.frag */,
+				C053E000224F1B8D00DFF32E /* BasicMesh.vert */,
+				C053DFFE224F19A400DFF32E /* Phong.frag */,
+				C053DFFF224F19A400DFF32E /* Phong.vert */,
+				C053DFFC224F0B4000DFF32E /* Sprite.frag */,
+				C053DFFD224F0B4000DFF32E /* Sprite.vert */,
+			);
+			path = Shaders;
+			sourceTree = SOURCE_ROOT;
+		};
+		C053DFE8224F02F900DFF32E /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				C053DFE9224F02F900DFF32E /* ShipWithThrust.png */,
+				C053DFEA224F02F900DFF32E /* Farback01.png */,
+				C053DFEB224F02F900DFF32E /* Farback02.png */,
+				C053DFEC224F02F900DFF32E /* Sphere.gpmesh */,
+				C053DFED224F02F900DFF32E /* Ship.png */,
+				C053DFEE224F02F900DFF32E /* s_kao.png */,
+				C053DFEF224F02F900DFF32E /* Character04.png */,
+				C053DFF0224F02F900DFF32E /* Character05.png */,
+				C053DFF1224F02F900DFF32E /* Laser.png */,
+				C053DFF2224F02F900DFF32E /* Character06.png */,
+				C053DFF3224F02F900DFF32E /* Character02.png */,
+				C053DFF4224F02F900DFF32E /* Character03.png */,
+				C053DFF5224F02F900DFF32E /* Character01.png */,
+				C053DFF6224F02F900DFF32E /* Plane.gpmesh */,
+				C053DFF7224F02F900DFF32E /* kao.png */,
+				C053DFF8224F02F900DFF32E /* Stars.png */,
+				C053DFF9224F02F900DFF32E /* Cube.gpmesh */,
+			);
+			path = Assets;
+			sourceTree = SOURCE_ROOT;
+		};
 		C069B34E2240A85D00DB509F = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +203,12 @@
 				C069B35A2240A85D00DB509F /* main.cpp */,
 				C069B381224337BF00DB509F /* AnimSpriteComponent.cpp */,
 				C069B382224337BF00DB509F /* AnimSpriteComponent.hpp */,
+				C053E0022251D8FE00DFF32E /* AudioSystem.cpp */,
+				C053E0032251D8FE00DFF32E /* AudioSystem.hpp */,
+				C053E0082252105A00DFF32E /* AudioComponent.cpp */,
+				C053E0092252105A00DFF32E /* AudioComponent.hpp */,
+				C053E0052251EBA900DFF32E /* SoundEvent.cpp */,
+				C053E0062251EBA900DFF32E /* SoundEvent.hpp */,
 				C069B37E224332E500DB509F /* BGSpriteComponent.cpp */,
 				C069B37F224332E500DB509F /* BGSpriteComponent.hpp */,
 				C07B16A32245236300818451 /* CircleComponent.cpp */,
@@ -136,16 +227,26 @@
 				C069B3712241403C00DB509F /* Component.hpp */,
 				C069B3752241E2DF00DB509F /* SpriteComponent.cpp */,
 				C069B3762241E2DF00DB509F /* SpriteComponent.hpp */,
+				C05DF41322486C93003FD0F5 /* Shader.cpp */,
+				C05DF41422486C93003FD0F5 /* Shader.hpp */,
 				C069B3782243168000DB509F /* Player.cpp */,
 				C069B3792243168000DB509F /* Player.hpp */,
 				C07B169722448CEE00818451 /* Enemy.cpp */,
 				C07B169822448CEE00818451 /* Enemy.hpp */,
 				C03CABC12245A01900CC92FF /* VertexArray.cpp */,
 				C03CABC22245A01900CC92FF /* VertexArray.hpp */,
+				C05DF4162249115C003FD0F5 /* Texture.cpp */,
+				C05DF4172249115C003FD0F5 /* Texture.hpp */,
 				C069B37B2243234600DB509F /* Math.cpp */,
 				C069B37C2243234600DB509F /* Math.hpp */,
+				C03CDDD4224DF3B1005D9DE5 /* Mesh.cpp */,
+				C03CDDD5224DF3B1005D9DE5 /* Mesh.hpp */,
+				C03CDDD7224DFBE1005D9DE5 /* MeshComponent.cpp */,
+				C03CDDD8224DFBE1005D9DE5 /* MeshComponent.hpp */,
 				C07B169A22448E4F00818451 /* Random.cpp */,
 				C07B169B22448E4F00818451 /* Random.hpp */,
+				C053DFE8224F02F900DFF32E /* Assets */,
+				C03CDDD1224DAA73005D9DE5 /* Shaders */,
 			);
 			path = "tonyu0-1";
 			sourceTree = "<group>";
@@ -153,6 +254,12 @@
 		C069B3652240AFE700DB509F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C03CDDCE224DA0D4005D9DE5 /* CoreFoundation.framework */,
+				C05DF42022491A5E003FD0F5 /* libSOIL.a */,
+				C09354F82249C5900098874B /* libSOIL.a */,
+				C05DF41D224915A9003FD0F5 /* SOIL.lib */,
+				C05DF41B22491590003FD0F5 /* libSOIL.a */,
+				C05DF4192249128F003FD0F5 /* libGLEW.2.1.0.dylib */,
 				C07B16A922453E7A00818451 /* OpenGL.framework */,
 				C069B373224148DD00DB509F /* SDL2_image.framework */,
 				C069B36B2240C0DA00DB509F /* libSDL2.a */,
@@ -172,6 +279,7 @@
 				C069B3532240A85D00DB509F /* Sources */,
 				C069B3542240A85D00DB509F /* Frameworks */,
 				C069B3552240A85D00DB509F /* CopyFiles */,
+				C03CDDD0224DA3F6005D9DE5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -213,13 +321,35 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C03CDDD0224DA3F6005D9DE5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ -d \"$BUILD_DIR/Debug\" ]; then\ncp \"$SRCROOT\"/../external/GLEW/lib/mac/*.dylib $BUILD_DIR/Debug\ncp \"$SRCROOT\"/../external/SDL/lib/mac/*.dylib $BUILD_DIR/Debug\ncp \"$SRCROOT\"/../external/FMOD/\"FMOD Programmers API\"/api/lowlevel/lib/*.dylib $BUILD_DIR/Debug\ncp \"$SRCROOT\"/../external/FMOD/\"FMOD Programmers API\"/api/studio/lib/*.dylib $BUILD_DIR/Debug\nfi\n\nif [ -d \"$BUILD_DIR/Release\" ]; then\ncp \"$SRCROOT\"/../external/GLEW/lib/mac/*.dylib $BUILD_DIR/Release\ncp \"$SRCROOT\"/../external/SDL/lib/mac/*.dylib $BUILD_DIR/Release\ncp \"$SRCROOT\"/../external/FMOD/\"FMOD Programmers API\"/api/lowlevel/lib/*.dylib $BUILD_DIR/Release\ncp \"$SRCROOT\"/../external/FMOD/\"FMOD Programmers API\"/api/studio/lib/*.dylib $BUILD_DIR/Release\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C069B3532240A85D00DB509F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				C07B16A22244979000818451 /* InputComponent.cpp in Sources */,
+				C03CDDD9224DFBE1005D9DE5 /* MeshComponent.cpp in Sources */,
 				C07B169C22448E4F00818451 /* Random.cpp in Sources */,
+				C053E0042251D8FE00DFF32E /* AudioSystem.cpp in Sources */,
 				C07B16A52245236300818451 /* CircleComponent.cpp in Sources */,
 				C07B16A8224529ED00818451 /* Bullet.cpp in Sources */,
 				C069B3682240B94B00DB509F /* Game.hpp in Sources */,
@@ -227,9 +357,14 @@
 				C07B169F224496F600818451 /* MoveComponent.cpp in Sources */,
 				C069B35B2240A85D00DB509F /* main.cpp in Sources */,
 				C069B37D2243234600DB509F /* Math.cpp in Sources */,
+				C053E0072251EBA900DFF32E /* SoundEvent.cpp in Sources */,
 				C069B3772241E2DF00DB509F /* SpriteComponent.cpp in Sources */,
+				C05DF41522486C93003FD0F5 /* Shader.cpp in Sources */,
 				C069B3642240A88700DB509F /* Game.cpp in Sources */,
 				C03CABC32245A01900CC92FF /* VertexArray.cpp in Sources */,
+				C053E00A2252105A00DFF32E /* AudioComponent.cpp in Sources */,
+				C05DF4182249115C003FD0F5 /* Texture.cpp in Sources */,
+				C03CDDD6224DF3B1005D9DE5 /* Mesh.cpp in Sources */,
 				C069B36F22413B6800DB509F /* Actor.cpp in Sources */,
 				C069B3722241403C00DB509F /* Component.cpp in Sources */,
 				C069B380224332E500DB509F /* BGSpriteComponent.cpp in Sources */,
@@ -355,14 +490,36 @@
 		C069B35F2240A85D00DB509F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6T6N76446H;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				FRAMEWORK_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = (
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../external/SOIL/include",
+					"$(SRCROOT)/../external/SDL/include",
+					"$(SRCROOT)/../external/GLEW/include",
+					"$(SRCROOT)/../external/rapidjson/include",
+					"$(SRCROOT)/../external/FMOD/\"FMOD Programmers API\"/api/lowlevel/inc",
+					"$(SRCROOT)/../external/FMOD/\"FMOD Programmers API\"/api/studio/inc",
 				);
-				HEADER_SEARCH_PATHS = /usr/local/include;
-				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(SRCROOT)/../external/SOIL/lib/mac",
+					"$(SRCROOT)/../external/SDL/lib/mac",
+					"$(SRCROOT)/../external/GLEW/lib/mac",
+					"$(SRCROOT)/../external/FMOD/\"FMOD Programmers API\"/api/lowlevel/lib",
+					"$(SRCROOT)/../external/FMOD/\"FMOD Programmers API\"/api/studio/lib",
+				);
+				OTHER_LDFLAGS = (
+					"-lSOIL",
+					"-lGLEW.2.1.0",
+					"-lSDL2-2.0.0",
+					"-lSDL2_image-2.0.0",
+					"-lSDL2_ttf-2.0.0",
+					"-lSDL2_mixer-2.0.0",
+					"-lfmodstudioL",
+					"-lfmodL",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -370,14 +527,36 @@
 		C069B3602240A85D00DB509F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6T6N76446H;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				FRAMEWORK_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = (
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../external/SOIL/include",
+					"$(SRCROOT)/../external/SDL/include",
+					"$(SRCROOT)/../external/GLEW/include",
+					"$(SRCROOT)/../external/rapidjson/include",
+					"$(SRCROOT)/../external/FMOD/\"FMOD Programmers API\"/api/lowlevel/inc",
+					"$(SRCROOT)/../external/FMOD/\"FMOD Programmers API\"/api/studio/inc",
 				);
-				HEADER_SEARCH_PATHS = /usr/local/include;
-				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(SRCROOT)/../external/SOIL/lib/mac",
+					"$(SRCROOT)/../external/SDL/lib/mac",
+					"$(SRCROOT)/../external/GLEW/lib/mac",
+					"$(SRCROOT)/../external/FMOD/\"FMOD Programmers API\"/api/lowlevel/lib",
+					"$(SRCROOT)/../external/FMOD/\"FMOD Programmers API\"/api/studio/lib",
+				);
+				OTHER_LDFLAGS = (
+					"-lSOIL",
+					"-lGLEW.2.1.0",
+					"-lSDL2-2.0.0",
+					"-lSDL2_image-2.0.0",
+					"-lSDL2_ttf-2.0.0",
+					"-lSDL2_mixer-2.0.0",
+					"-lfmodstudioL",
+					"-lfmodL",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

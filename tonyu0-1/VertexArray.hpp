@@ -5,7 +5,7 @@
 //  Created by Nakagawa on 2019/03/23.
 //  Copyright © 2019 Nakagawa. All rights reserved.
 //
-
+#pragma once
 #ifndef VertexArray_hpp
 #define VertexArray_hpp
 
@@ -15,10 +15,14 @@
 
 class VertexArray{
 public:
-    VertexArray(const float* vertices, unsigned int numVertices, const float* indices, unsigned int numIndices);
+    VertexArray(const float* vertices, unsigned int numVertices, const unsigned int* indices, unsigned int numIndices);
     ~VertexArray();
     
     void SetActive();
+    
+    // Getter
+    unsigned int GetNumIndices(){return mNumIndices;}
+    unsigned int GetNumVertices(){return mNumVertices;}
     
 private:
     unsigned int mNumVertices;
