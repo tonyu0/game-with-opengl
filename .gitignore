@@ -1,0 +1,6 @@
+Debug
+Release
+*.txt
+.vs
+.vscode
+*.user
