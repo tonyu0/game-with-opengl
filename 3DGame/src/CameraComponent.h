@@ -4,10 +4,10 @@
 
 class CameraComponent : public Component {
 public:
-  CameraComponent(class Actor *owner, int updateOrder = 200);
+	CameraComponent(class Actor* owner, int updateOrder = 200);
 
-  TypeID GetType() const override { return TCameraComponent; }
+	EComponentType GetType() const override { return EComponentType::TCameraComponent; }
 
 protected:
-  void SetViewMatrix(const Matrix4 &view);
+	void SetViewMatrix(const Matrix4& view);
 };

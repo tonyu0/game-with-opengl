@@ -3,19 +3,19 @@
 
 class BallActor : public Actor {
 public:
-  BallActor(class Game *game);
+	BallActor(class Game* game);
 
-  void UpdateActor(float deltaTime) override;
+	void UpdateActor(float deltaTime) override;
 
-  void HitTarget();
+	void HitTarget();
 
-  void LoadProperties(const rapidjson::Value &inObj) override;
-  void SaveProperties(rapidjson::Document::AllocatorType &alloc,
-                      rapidjson::Value &inObj) const override;
+	void LoadProperties(const rapidjson::Value& inObj) override;
+	void SaveProperties(rapidjson::Document::AllocatorType& alloc,
+		rapidjson::Value& inObj) const override;
 
-  TypeID GetType() const override { return TBallActor; }
+	EActorType GetType() const override { return EActorType::TBallActor; }
 
 private:
-  class AudioComponent *mAudioComp;
-  float mLifeSpan;
+	class AudioComponent* mAudioComp;
+	float mLifeSpan;
 };

@@ -8,18 +8,18 @@
 // When Actor moving, it can update 3D attr of SoundEvent.
 class AudioComponent : public Component {
 public:
-  AudioComponent(class Actor *owner, int updateOrder = 200);
-  ~AudioComponent();
+	AudioComponent(class Actor* owner, int updateOrder = 200);
+	~AudioComponent();
 
-  void Update(float deltaTime) override;
-  void OnUpdateWorldTransform() override;
+	void Update(float deltaTime) override;
+	void OnUpdateWorldTransform() override;
 
-  SoundEvent PlayEvent(const std::string &name);
-  void StopAllEvents();
+	SoundEvent PlayEvent(const std::string& name);
+	void StopAllEvents();
 
-  TypeID GetType() const override { return TAudioComponent; }
+	EComponentType GetType() const override { return EComponentType::TAudioComponent; }
 
 private:
-  std::vector<SoundEvent> mEvents2D;
-  std::vector<SoundEvent> mEvents3D;
+	std::vector<SoundEvent> mEvents2D;
+	std::vector<SoundEvent> mEvents3D;
 };

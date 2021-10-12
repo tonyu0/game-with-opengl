@@ -3,11 +3,11 @@
 
 class BallMove : public MoveComponent {
 public:
-  BallMove(class Actor *owner);
+	BallMove(class Actor* owner);
 
-  void Update(float deltaTime) override;
+	void Update(float deltaTime) override;
 
-  TypeID GetType() const override { return TBallMove; }
+	EComponentType GetType() const override { return EComponentType::TBallMove; }
 
 protected:
 };
