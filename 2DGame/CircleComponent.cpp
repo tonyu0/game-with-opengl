@@ -1,30 +1,40 @@
-//
-//  CircleComponent.cpp
-//  tonyu0-1
-//
-//  Created by Nakagawa on 2019/03/22.
-//  Copyright © 2019 Nakagawa. All rights reserved.
-//
+// ----------------------------------------------------------------
+// From Game Programming in C++ by Sanjay Madhav
+// Copyright (C) 2017 Sanjay Madhav. All rights reserved.
+// 
+// Released under the BSD License
+// See LICENSE in root directory for full details.
+// ----------------------------------------------------------------
 
-#include "CircleComponent.hpp"
-#include "Actor.hpp"
+#include "CircleComponent.h"
+#include "Actor.h"
 
-CircleComponent::CircleComponent(Actor *owner)
-    : Component(owner), mRadius(0.0f) {}
-
-const Vector3 &CircleComponent::GetCenter() const {
-  return mOwner->GetPosition();
+CircleComponent::CircleComponent(class Actor* owner)
+:Component(owner)
+,mRadius(0.0f)
+{
+	
 }
 
-float CircleComponent::GetRadius() const {
-  return mOwner->GetScale() * mRadius;
+const Vector2& CircleComponent::GetCenter() const
+{
+	return mOwner->GetPosition();
 }
 
-bool Intersect(const CircleComponent &a, const CircleComponent &b) {
-  Vector3 diff = a.GetCenter() - b.GetCenter();
-  float distSq = diff.LengthSq();
+float CircleComponent::GetRadius() const
+{
+	return mOwner->GetScale() * mRadius;
+}
 
-  float radiiSq = a.GetRadius() + b.GetRadius();
-  radiiSq *= radiiSq;
-  return distSq <= radiiSq;
+bool Intersect(const CircleComponent& a, const CircleComponent& b)
+{
+	// Calculate distance squared
+	Vector2 diff = a.GetCenter() - b.GetCenter();
+	float distSq = diff.LengthSq();
+
+	// Calculate sum of radii squared
+	float radiiSq = a.GetRadius() + b.GetRadius();
+	radiiSq *= radiiSq;
+
+	return distSq <= radiiSq;
 }

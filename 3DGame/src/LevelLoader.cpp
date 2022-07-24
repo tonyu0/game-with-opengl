@@ -19,7 +19,6 @@
 #include "SpriteComponent.h"
 #include "TargetActor.h"
 #include "TargetComponent.h"
-#include <SDL/SDL.h>
 #include <fstream>
 #include <rapidjson/prettywriter.h>
 #include <rapidjson/stringbuffer.h>

@@ -24,28 +24,22 @@ VertexArray::VertexArray(const void* verts, unsigned int numVerts,
 
 	// Vertex Layout
 	// Specify the vertex attributes
+	// Vertex Layout 0 is Position, and so on.
+	// Position is 3 floats
+	glEnableVertexAttribArray(0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, vertexSize, 0);
+	// Normal is 3 floats
+	glEnableVertexAttribArray(1);
+	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, vertexSize,
+		reinterpret_cast<void*>(sizeof(float) * 3));
+	// TODO: Texture layout commonization, and remove if state in the case of PosNormTex
 	if (layout == EVertexLayout::PosNormTex) {
-		// Vertex Layout 0 is Position, and so on.
-		// Position is 3 floats
-		glEnableVertexAttribArray(0);
-		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, vertexSize, 0);
-		// Normal is 3 floats
-		glEnableVertexAttribArray(1);
-		glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, vertexSize,
-			reinterpret_cast<void*>(sizeof(float) * 3));
 		// Texture coordinates is 2 floats
 		glEnableVertexAttribArray(2);
 		glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, vertexSize,
 			reinterpret_cast<void*>(sizeof(float) * 6));
 	}
 	else if (layout == EVertexLayout::PosNormSkinTex) {
-		// Position is 3 floats
-		glEnableVertexAttribArray(0);
-		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, vertexSize, 0);
-		// Normal is 3 floats
-		glEnableVertexAttribArray(1);
-		glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, vertexSize,
-			reinterpret_cast<void*>(sizeof(float) * 3));
 		// Skinning indices (keep as ints)
 		glEnableVertexAttribArray(2);
 		glVertexAttribIPointer(2, 4, GL_UNSIGNED_BYTE, vertexSize,

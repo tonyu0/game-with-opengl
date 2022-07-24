@@ -14,7 +14,7 @@ bool Texture::Load(const std::string& fileName) {
 	unsigned char* image = stbi_load(fileName.c_str(), &mWidth, &mHeight, &channels, 0);
 
 	if (image == nullptr) {
-		SDL_Log("SOIL failed to load image %s: %s", fileName.c_str());
+		SDL_Log("Failed to load image %s: %s", fileName.c_str());
 		return false;
 	}
 	SDL_Log("Texture Name: %s, Size: %d x %d, Channels: %d", fileName.c_str(), mHeight, mWidth, channels);

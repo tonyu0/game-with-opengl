@@ -1,33 +1,47 @@
-//
-//  InputComponent.cpp
-//  tonyu0-1
-//
-//  Created by Nakagawa on 2019/03/22.
-//  Copyright © 2019 Nakagawa. All rights reserved.
-//
+// ----------------------------------------------------------------
+// From Game Programming in C++ by Sanjay Madhav
+// Copyright (C) 2017 Sanjay Madhav. All rights reserved.
+// 
+// Released under the BSD License
+// See LICENSE in root directory for full details.
+// ----------------------------------------------------------------
 
-#include "InputComponent.hpp"
-#include "Bullet.hpp"
-#include <SDL.h>
+#include "InputComponent.h"
+#include "Actor.h"
 
-InputComponent::InputComponent(Actor *owner) : MoveComponent(owner) {}
+InputComponent::InputComponent(class Actor* owner)
+:MoveComponent(owner)
+,mForwardKey(0)
+,mBackKey(0)
+,mClockwiseKey(0)
+,mCounterClockwiseKey(0)
+{
+	
+}
 
-void InputComponent::ProcessKeyboard(const uint8_t *state) {
-  float forwardSpeed = 0.0f;
-  float angularSpeed = 0.0f;
-  if (state[SDL_SCANCODE_UP]) {
-    forwardSpeed += 200;
-  }
-  if (state[SDL_SCANCODE_DOWN]) {
-    forwardSpeed -= 200;
-  }
-  if (state[SDL_SCANCODE_LEFT]) {
-    angularSpeed -= 10;
-  }
-  if (state[SDL_SCANCODE_RIGHT]) {
-    angularSpeed += 10;
-  }
+void InputComponent::ProcessInput(const uint8_t* keyState)
+{
+	// Calculate forward speed for MoveComponent
+	float forwardSpeed = 0.0f;
+	if (keyState[mForwardKey])
+	{
+		forwardSpeed += mMaxForwardSpeed;
+	}
+	if (keyState[mBackKey])
+	{
+		forwardSpeed -= mMaxForwardSpeed;
+	}
+	SetForwardSpeed(forwardSpeed);
 
-  SetForwardSpeed(forwardSpeed);
-  SetAngularSpeed(angularSpeed);
+	// Calculate angular speed for MoveComponent
+	float angularSpeed = 0.0f;
+	if (keyState[mClockwiseKey])
+	{
+		angularSpeed += mMaxAngularSpeed;
+	}
+	if (keyState[mCounterClockwiseKey])
+	{
+		angularSpeed -= mMaxAngularSpeed;
+	}
+	SetAngularSpeed(angularSpeed);
 }
